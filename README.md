@@ -46,7 +46,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 [![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午6.11.22.png)](https://www.wongwonggoods.com/?attachment_id=8016)
 
 
-> `請務必複製下來，這個 KEY 我們取名為 OPENAI_API_KEY `
+> 請務必複製下來，這個 KEY 我們取名為 `OPENAI_API_KEY `
 
 ## step 3. 去 line developer 建立一個新的機器人
 
@@ -79,7 +79,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 
 
 
-> `請務必複製下來，這個 KEY 我們取名為 LINE_CHANNEL_SECRET `
+> 請務必複製下來，這個 KEY 我們取名為 `LINE_CHANNEL_SECRET `
 
 
 ### step 3-3. 在 Messaging API 的分頁，進行一些機器人初始設定
@@ -108,7 +108,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 
 
 
-> `請務必複製下來，這個 KEY 我們取名為 LINE_CHANNEL_ACCESS_TOKEN `
+> 請務必複製下來，這個 KEY 我們取名為 `LINE_CHANNEL_ACCESS_TOKEN `
 >
 > 請不要把這金鑰分享給別人，別人可能會拿去作壞事！！！
 
