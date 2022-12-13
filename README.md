@@ -82,10 +82,14 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 > 請務必複製下來，這個 KEY 我們取名為 `LINE_CHANNEL_SECRET `
 
 
-### step 3-3. 在 Messaging API 的分頁，進行一些機器人初始設定
+### step 3-3. 在 Messaging API 的分頁，進行一些機器人初始設定 (並加機器人好友)
 
 再來我們去上方，選擇 Messaging API 的分頁，
 我們先關閉一些可能會吵的東西 (預設的自動回復之類的)，
+
+
+> `這邊可以順便掃一下 QR code 或透過 line ID ，加機器人的 line 好友！　`
+
 
 我自己是設定如下：
 
@@ -153,9 +157,9 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 ### step 5-1. 去部屬完成的 vercel 頁面，拿到我們要用的網址
 
 部屬完後，回到專案頁面，紅框處就是你這個專案的網址了。
-==把這個網址複製下來，等等要用==
+`把這個網址複製下來，等等要用`
 
-> ==點進去會 404 是正常的，因為我沒設定首頁只有設定  「/webhook」 ==
+> `點進去會 404 是正常的，因為我沒設定首頁只有設定  「/webhook」 `
 
 [![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午9.30.48.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-13-%e4%b8%8b%e5%8d%889-30-48/)
 
@@ -166,7 +170,7 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 將剛剛網址填入，並在後面加上 「/webhook」，例如下圖
 可以用 Verify 看看有沒有問題，通常應該會是寫「Success」
 
-* 「==記得開啟下面的使用 Use webhook ==」
+* 「`記得開啟下面的使用 Use webhook `」
 
 
 
