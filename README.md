@@ -146,13 +146,41 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 [![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午7.47.23.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-13-%e4%b8%8b%e5%8d%887-47-23/)
 
 
+
+## step 5. 設定 webhook
+
+
+### step 5-1. 去部屬完成的 vercel 頁面，拿到我們要用的網址
+
+部屬完後，回到專案頁面，紅框處就是你這個專案的網址了。
+==把這個網址複製下來，等等要用==
+
+> ==點進去會 404 是正常的，因為我沒設定首頁只有設定  「/webhook」 ==
+
+[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午9.30.48.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-13-%e4%b8%8b%e5%8d%889-30-48/)
+
+
+### step 5-2. 回到 line developer 設定 webhook
+
+回到  line developer 的 Messaging API 分頁，
+將剛剛網址填入，並在後面加上 「/webhook」，例如下圖
+可以用 Verify 看看有沒有問題，通常應該會是寫「Success」
+
+* 「==記得開啟下面的使用 Use webhook ==」
+
+
+
+[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午9.29.23.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-13-%e4%b8%8b%e5%8d%889-29-23/)
+
+
+
 # 完成圖範例
 
 [![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-12-下午11.24.29.png)](https://www.wongwonggoods.com/?attachment_id=8017) 
 
 [![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-12-下午11.21.45.png)](https://www.wongwonggoods.com/?attachment_id=8018)
 
-# 此 linebot 的一些內建功能 
+# 此 linebot 的其他一些內建功能 
 
 ## 機器人「說話開關」
 
