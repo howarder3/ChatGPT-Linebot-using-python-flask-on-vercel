@@ -2,27 +2,17 @@ from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
+from api.chatgpt import ChatGPT
 
 import os
-import openai
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
 workingStatus = True
-app = Flask(__name__)
 
-def get_gpt_response(text):
-    response = openai.Completion.create(
-        model="text-davinci-003",
-        prompt=text + "\n\n",  # for end of string
-        temperature=0,
-        frequency_penalty=0,
-        presence_penalty=0.6,
-        max_tokens=240
-    )
-    return response['choices'][0]['text']
+app = Flask(__name__)
+chatgpt = ChatGPT()
 
 # domain root 
 @app.route('/')
@@ -47,6 +37,9 @@ def callback():
 @line_handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     global workingStatus
+    if event.message.type != "text":
+        return
+
     if event.message.text == "說話":
         workingStatus = True
         line_bot_api.reply_message(
@@ -62,11 +55,12 @@ def handle_message(event):
         return
 
     if workingStatus:
-        reply_msg = get_gpt_response(event.message.text).strip()
+        chatgpt.add_msg(f"HUMAN:{event.message.text}\n")
+        reply_msg = chatgpt.get_response().replace("AI:", "", 1)
+        chatgpt.add_msg(f"AI:{event.message.text}\n")
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=reply_msg))
-
 
 if __name__ == "__main__":
     app.run()
