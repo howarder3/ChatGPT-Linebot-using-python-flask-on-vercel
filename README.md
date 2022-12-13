@@ -21,8 +21,8 @@
 >
 > `還有很多可以優化的地方，歡迎提供 PR！`
 
-- [v] (已調整完成) 回復文字感覺不是很順 (可能需要研究一下 API 使用方法)
-- [v] (已調整完成) 記憶功能 
+- [x] (已調整完成) 回復文字感覺不是很順 (可能需要研究一下 API 使用方法)
+- [x] (已調整完成) 記憶功能 
 ...
 
 > 目前算法是「`紀錄使用者與 AI 的前20句對話`」，嘗試推論出下一句話應該要說什麼。以達成延續話題的效果。
@@ -191,11 +191,12 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 
 # 完成圖範例
 
-> 我之前在群組測試過程的截圖，實際會有不同
 
 [![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-12-下午11.24.29.png)](https://www.wongwonggoods.com/?attachment_id=8017) 
 
+
 [![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-12-下午11.21.45.png)](https://www.wongwonggoods.com/?attachment_id=8018)
+
 
 # 此 linebot 的其他一些內建功能 
 
