@@ -1,6 +1,6 @@
 # GPT-Linebot using python flask for vercel
 
-本文同步更新至我的個人網站：[【Side Project】(免寫程式、免費體驗) Python flask 實作類似 ChatGPT 的 Linebot，並部屬至 vercel 上](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/)
+本文同步更新至我的個人網站：[【Side Project】(全圖文教學) Python flask 實作類似 ChatGPT 的 Linebot，並部屬至 vercel 上](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/)
 
 > `本篇教學無經驗的新手也可學習，無須寫任何程式。`
 > 
