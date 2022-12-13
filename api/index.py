@@ -24,7 +24,11 @@ def get_gpt_response(text):
     )
     return response['choices'][0]['text']
 
-
+# domain root 
+@app.route('/')
+def home():
+    return 'Hello, World!'
+    
 @app.route("/webhook", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
