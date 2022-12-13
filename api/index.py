@@ -17,7 +17,7 @@ def get_gpt_response(text):
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt=text + "\n\n",  # for end of string
-        temperature=0.9,
+        temperature=0,
         frequency_penalty=0,
         presence_penalty=0.6,
         max_tokens=240
