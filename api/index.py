@@ -58,7 +58,7 @@ def handle_message(event):
         return
 
     if workingStatus:
-        reply_msg = get_gpt_response(event.message.text)
+        reply_msg = get_gpt_response(event.message.text).strip()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=reply_msg))
