@@ -10,7 +10,6 @@ class ChatGPT:
         self.prompt = Prompt()
 
     def get_response(self):
-        print(self.prompt.generate_prompt())
         response = openai.Completion.create(
         model="text-davinci-003", 
         prompt=self.prompt.generate_prompt(),
