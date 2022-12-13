@@ -3,6 +3,7 @@
 本文同步更新至我的個人網站：[【Side Project】(免寫程式、免費體驗) Python flask 實作類似 ChatGPT 的 Linebot，並部屬至 vercel 上](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/)
 
 > `本篇教學無經驗的新手也可學習，無須寫任何程式。`
+> 
 > 無經驗預計 15 ~ 20 分鐘都可以完成。老手最快可能 5 分鐘就搞定
 
 * 這是使用 python flask 套件撰寫的 gpt-linebot
@@ -11,6 +12,7 @@
 * Why vercel? `免費`！！！免費額度就很夠一般使用，是 heroku 之後的好選擇
 
 > 註：ChatGPT 與 gpt 是同樣任務的模型，而目前透過 API 只能使用到 GPT-3 (本程式使用的方法)
+> 
 > 而非 ChatGPT 使用的 GPT-3.5
 
 # 安裝步驟
@@ -49,6 +51,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 ## step 3. 去 line developer 建立一個新的機器人
 
 > 這邊熟悉的人動作應該超快，可以略過，
+>
 > 以下教學是針對完全沒經驗的新手
 
 我們先到[ line developer 的首頁](https://developers.line.biz/zh-hant/ " line developer 的首頁")註冊一下，
@@ -106,6 +109,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 
 
 > `請務必複製下來，這個 KEY 我們取名為 LINE_CHANNEL_ACCESS_TOKEN `
+>
 > 請不要把這金鑰分享給別人，別人可能會拿去作壞事！！！
 
 
@@ -162,6 +166,7 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 # TODO List 
 
 > 目前基本功能都已經有了，然後我比較忙可能沒空一直更新QQ
+>
 > `還有很多可以優化的地方，歡迎提供 PR！`
 
 - [ ] 回復文字感覺不是很順 (可能需要研究一下 API 使用方法)
