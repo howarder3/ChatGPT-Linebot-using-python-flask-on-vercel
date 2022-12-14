@@ -1,6 +1,6 @@
 # GPT-Linebot using python flask for vercel
 
-本文同步更新至我的個人網站：[【Side Project】(全圖文教學) Python flask 實作類似 ChatGPT 的 Linebot，並部屬至 vercel 上](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/)
+本文同步更新至我的個人網站：[【Side Project】(全圖文教學) 用 Python flask 實作類似 ChatGPT 的 Linebot，並部屬至 vercel 上](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/)
 
 > `本篇教學無經驗的新手也可學習，無須寫任何程式。`
 > 
@@ -14,6 +14,16 @@
 > 註：ChatGPT 與 gpt 是同樣任務的模型，而目前透過 API 只能使用到 GPT-3 (本程式使用的方法)
 > 
 > 而非 ChatGPT 使用的 GPT-3.5
+
+# TODO List 
+
+> 目前基本功能都已經有了，然後我比較忙可能沒空一直更新QQ
+>
+> `還有很多可以優化的地方，歡迎提供 PR！`
+
+- [ ] 回復文字感覺不是很順 (可能需要研究一下 API 使用方法)
+- [ ] 記憶功能
+...
 
 # 安裝步驟
 
@@ -149,24 +159,23 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 
 [![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午7.47.23.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-13-%e4%b8%8b%e5%8d%887-47-23/)
 
+###  step 4-3. deploy 完成後，可以簡單確認是否有成功
+
+去部屬完成的 vercel 頁面，紅框處可以拿到我們要用的網址，
+
+`把這個網址複製下來，等等要用`
+
+這個網址我們也可以點開，應該會出現我們在程式預先寫好的 Hello, World! (應該是一個只有 Hello, World! 的網頁)
+我們可以藉此確定程式有正常的被 Deploy
+
+
+[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-14-上午1.25.48.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-14-%e4%b8%8a%e5%8d%881-25-48/)
 
 
 ## step 5. 設定 webhook
 
 
-### step 5-1. 去部屬完成的 vercel 頁面，拿到我們要用的網址
-
-部屬完後，回到專案頁面，紅框處就是你這個專案的網址了。
-`把這個網址複製下來，等等要用`
-
-> `點進去會 404 是正常的，因為我沒設定首頁只有設定  「/webhook」 `
-
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午9.30.48.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-13-%e4%b8%8b%e5%8d%889-30-48/)
-
-
-### step 5-2. 回到 line developer 設定 webhook
-
-回到  line developer 的 Messaging API 分頁，
+回到 line developer 的 Messaging API 分頁，
 將剛剛網址填入，並在後面加上 「/webhook」，例如下圖
 可以用 Verify 看看有沒有問題，通常應該會是寫「Success」
 
@@ -179,6 +188,8 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 
 
 # 完成圖範例
+
+> 我之前在群組測試過程的截圖，實際會有不同
 
 [![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-12-下午11.24.29.png)](https://www.wongwonggoods.com/?attachment_id=8017) 
 
@@ -195,15 +206,6 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 * 輸入「閉嘴」：機器人暫停說話模式 (`但一段時間會自動再起動`)，閉嘴後將不會對任何對話有反應。
 
 
-# TODO List 
-
-> 目前基本功能都已經有了，然後我比較忙可能沒空一直更新QQ
->
-> `還有很多可以優化的地方，歡迎提供 PR！`
-
-- [ ] 回復文字感覺不是很順 (可能需要研究一下 API 使用方法)
-- [ ] 記憶功能
-...
 
 # 靈感來源
 
