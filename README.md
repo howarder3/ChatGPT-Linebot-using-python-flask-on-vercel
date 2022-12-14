@@ -121,7 +121,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 > 請不要把這金鑰分享給別人，別人可能會拿去作壞事！！！
 
 
-
+`然後這邊網頁先不要關，等等還會用到！！！！`
 
 
 ## step 4. 去 vercel 設定相關的環境變數，完成啟動機器人！
@@ -170,7 +170,7 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 
 
 回到 line developer 的 Messaging API 分頁，
-將剛剛網址填入，並在後面加上 「/webhook」，例如下圖
+將剛剛 step 4-3. 的網址填入，並在後面加上 「/webhook」，例如下圖
 可以用 Verify 看看有沒有問題，通常應該會是寫「Success」
 
 * 「`記得開啟下面的使用 Use webhook `」
