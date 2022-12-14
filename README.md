@@ -1,4 +1,4 @@
-# GPT-Linebot using python flask for vercel
+# GPT-Linebot using python flask  vercel
 
 本文同步更新至我的個人網站：[【Side Project】(全圖文教學) 用 Python flask 實作類似 ChatGPT 的 Linebot，並部屬至 vercel 上](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/)
 
@@ -7,7 +7,7 @@
 > 無經驗預計 15 ~ 20 分鐘都可以完成。老手最快可能 5 分鐘就搞定
 
 * 這是使用 python flask 套件撰寫的 gpt-linebot
-* `不需要改 code`，只需去網頁設定一些內容，新手 15 分鐘內也能建立自己的 gpt-linebot
+* `不需寫 code`，只需去網頁設定一些內容，新手 15 分鐘內也能建立自己的 gpt-linebot
 * Why flask? 簡單好用，且支援 vercel
 * Why vercel? `免費`！！！免費額度就很夠一般使用，是 heroku 不再免費後的好選擇
 
