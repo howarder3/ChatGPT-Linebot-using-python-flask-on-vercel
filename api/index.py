@@ -8,7 +8,7 @@ import os
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
-working_status = os.getenv("DEFALUT_TALKING") if os.getenv("DEFALUT_TALKING") else True 
+working_status = os.getenv("DEFALUT_TALKING", default="true").lower() == "true"
 
 print(type(os.getenv("DEFALUT_TALKING")))
 print(type(os.getenv("LINE_CHANNEL_SECRET")))
