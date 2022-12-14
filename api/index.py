@@ -9,7 +9,7 @@ import os
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 
-workingStatus = True
+working_status = True
 
 app = Flask(__name__)
 chatgpt = ChatGPT()
@@ -54,7 +54,7 @@ def handle_message(event):
             TextSendMessage(text="好的，我乖乖閉嘴 > <，如果想要我繼續說話，請跟我說 「說話」 > <"))
         return
 
-    if workingStatus:
+    if working_status:
         chatgpt.add_msg(f"HUMAN:{event.message.text}\n")
         reply_msg = chatgpt.get_response().replace("AI:", "", 1)
         chatgpt.add_msg(f"AI:{reply_msg}\n")
