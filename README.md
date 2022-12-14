@@ -40,7 +40,9 @@
 
 ## step 1. 至 github fork 專案
 
-去我這個專案的 [github repo](https://github.com/howarder3/GPT-Linebot-python-flask-for-vercel "github repo")
+去我這個專案的 [github repo](https://github.com/howarder3/GPT-Linebot-python-flask-on-vercel "github repo")
+
+
 
 按下面的按鈕，
 fork 一份檔案到自己的帳號底下，等等我們會使用到
