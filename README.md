@@ -9,7 +9,7 @@
 * 這是使用 python flask 套件撰寫的 gpt-linebot
 * `不需要改 code`，只需去網頁設定一些內容，新手 15 分鐘內也能建立自己的 gpt-linebot
 * Why flask? 簡單好用，且支援 vercel
-* Why vercel? `免費`！！！免費額度就很夠一般使用，是 heroku 之後的好選擇
+* Why vercel? `免費`！！！免費額度就很夠一般使用，是 heroku 不再免費後的好選擇
 
 > 註：ChatGPT 與 gpt 是同樣任務的模型，而目前透過 API 只能使用到 GPT-3 (本程式使用的方法)
 > 
