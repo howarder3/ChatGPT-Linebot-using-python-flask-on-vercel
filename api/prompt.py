@@ -7,7 +7,7 @@ INIT_LANGUAGE = {
 class Prompt:
     def __init__(self):
         self.msg_list = []
-        self.msg_list.append(f"HUMAN: {INIT_LANGUAGE['zh']}")
+        self.msg_list.append(f"AI:{INIT_LANGUAGE['zh']}")
     
     def add_msg(self, new_msg):
         if len(self.msg_list) >= MSG_LIST_LIMIT:
