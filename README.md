@@ -15,18 +15,6 @@
 > 
 > 而非 ChatGPT 使用的 GPT-3.5
 
-# TODO List 
-
-> 目前基本功能都已經有了，然後我比較忙可能沒空一直更新QQ
->
-> `還有很多可以優化的地方，歡迎提供 PR！`
-
-- [x] (已調整完成) 回復文字感覺不是很順 (可能需要研究一下 API 使用方法)
-- [x] (已調整完成) 記憶功能 
-...
-
-> 目前算法是「`紀錄使用者與 AI 的前20句對話`」，嘗試推論出下一句話應該要說什麼。以達成延續話題的效果。
-
 # 安裝步驟
 
 主要會有四個地方要去：(`這部份不看也沒關係，以下照著做就可以了！`)
@@ -200,6 +188,8 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 [![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-12-下午11.21.45.png)](https://www.wongwonggoods.com/?attachment_id=8018)
 
 
+
+
 # 此 linebot 的其他一些內建功能 
 
 ## 機器人「說話開關」
@@ -208,8 +198,21 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 意外得到好評，所以這個功能就被保留下來
 
 * 輸入「說話」：機器人開啟說話模式，預設是開啟的
-* 輸入「閉嘴」：機器人暫停說話模式 (`但一段時間會自動再起動`)，閉嘴後將不會對任何對話有反應。
+* 輸入「閉嘴」：機器人暫停說話模式 (`但一段時間會自動再起動`)，閉嘴後將不會對任何對話有反應。輸入「說話」可再次開啟對話。
 
+
+
+# TODO List & Future Work
+
+> 目前基本功能都已經有了，然後我比較忙可能沒空一直更新QQ
+>
+> `還有很多可以優化的地方，歡迎提供 PR！`
+
+- [x] (已調整完成) 回復文字感覺不是很順 (可能需要研究一下 API 使用方法)
+- [x] (已調整完成) 記憶功能 
+...
+
+> 目前算法是「`紀錄使用者與 AI 的前20句對話`」，嘗試推論出下一句話應該要說什麼。以達成延續話題的效果。
 
 
 # 靈感來源
@@ -220,5 +223,5 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 # 參考資料
 
 * Line 官方提供的 python flask 製作 linebot 的 sample code [line/line-bot-sdk-python](https://github.com/line/line-bot-sdk-python)
-* Openai 官方提供的 python runtime Flask 範例 [Deploy an example with Flask](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python#python-version)
+* Vercel 官方提供的 python runtime Flask 範例 [Deploy an example with Flask](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python#python-version)
 
