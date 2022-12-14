@@ -208,7 +208,7 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 
 |環境變數名稱             |預設值           |說明 |
 |------------------------|--------------- |-----|
-| OPENAI_MODEL            | text-davinci-003 | 請參考 OpenAI 對 [model](https://beta.openai.com/docs/api-reference/completions/create#completions/create-model) 的敘述|
+| OPENAI_MODEL            | text-davinci-003| 請參考 OpenAI 對 [model](https://beta.openai.com/docs/api-reference/completions/create#completions/create-model) 的敘述|
 | OPENAI_TEMPERATURE      | 0               | 請參考 OpenAI 對 [temperature](https://beta.openai.com/docs/api-reference/completions/create#completions/create-temperature) 的敘述|
 | OPENAI_FREQUENCY_PENALTY| 0               | 請參考 OpenAI 對 [frequency_penalty](https://beta.openai.com/docs/api-reference/completions/create#completions/create-frequency_penalty) 的敘述|
 | OPENAI_PRESENCE_PENALTY | 0.6             | 請參考 OpenAI 對 [presence_penalty](https://beta.openai.com/docs/api-reference/completions/create#completions/create-presence_penalty) 的敘述|
