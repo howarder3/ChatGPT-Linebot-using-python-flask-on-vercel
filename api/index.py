@@ -10,9 +10,14 @@ line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 working_status = os.getenv("DEFALUT_TALKING", default="true").lower() == "true"
 
-print(type(os.getenv("DEFALUT_TALKING")))
-print(type(os.getenv("LINE_CHANNEL_SECRET")))
-print(type(os.getenv("LINE_CHANNEL_ACCESS_TOKEN")))
+print((os.getenv("DEFALUT_TALKING")))
+print((os.getenv("LINE_CHANNEL_SECRET")))
+print((os.getenv("LINE_CHANNEL_ACCESS_TOKEN")))
+print(os.getenv("OPENAI_MODEL", default="text-davinci-003"))
+print(int(os.getenv("OPENAI_TEMPERATURE", default=0)))
+print(int(os.getenv("OPENAI_FREQUENCY_PENALTY", default=0))
+print(float(os.getenv("OPENAI_PRESENCE_PENALTY", default=0.6))
+print(int(os.getenv("OPENAI_MAX_TOKENS", default=240))
 
 app = Flask(__name__)
 chatgpt = ChatGPT()
