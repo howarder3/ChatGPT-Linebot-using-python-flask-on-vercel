@@ -10,6 +10,10 @@ line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 working_status = os.getenv("DEFALUT_TALKING") if os.getenv("DEFALUT_TALKING") else True 
 
+print(type(os.getenv("DEFALUT_TALKING")))
+print(type(os.getenv("LINE_CHANNEL_SECRET")))
+print(type(os.getenv("LINE_CHANNEL_ACCESS_TOKEN")))
+
 app = Flask(__name__)
 chatgpt = ChatGPT()
 
