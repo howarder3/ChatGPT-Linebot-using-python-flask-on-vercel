@@ -1,5 +1,9 @@
+import os
+
+chat_language = os.getenv("INIT_LANGUAGE") if os.getenv("INIT_LANGUAGE") else "zh"
+
 MSG_LIST_LIMIT = 20
-INIT_LANGUAGE = {
+LANGUAGE_TABLE = {
   "zh": "哈囉！",
   "en": "Hello!"
 }
@@ -7,7 +11,7 @@ INIT_LANGUAGE = {
 class Prompt:
     def __init__(self):
         self.msg_list = []
-        self.msg_list.append(f"AI:{INIT_LANGUAGE['zh']}")
+        self.msg_list.append(f"AI:{LANGUAGE_TABLE[chat_language]}")
     
     def add_msg(self, new_msg):
         if len(self.msg_list) >= MSG_LIST_LIMIT:
