@@ -13,11 +13,11 @@ working_status = os.getenv("DEFALUT_TALKING", default="true").lower() == "true"
 app = Flask(__name__)
 chatgpt = ChatGPT()
 
-# domain root 
+# domain root
 @app.route('/')
 def home():
     return 'Hello, World!'
-    
+
 @app.route("/webhook", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
@@ -54,12 +54,13 @@ def handle_message(event):
         return
 
     if working_status:
-        chatgpt.add_msg(f"HUMAN:{event.message.text}?\n")
-        reply_msg = chatgpt.get_response().replace("AI:", "", 1)
-        chatgpt.add_msg(f"AI:{reply_msg}\n")
+        chatgpt.add_msg(f"Q:{event.message.text}?\n")
+        reply_msg = chatgpt.get_response().replace("A:", "", 1)
+        chatgpt.add_msg(f"A:{reply_msg}\n")
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=reply_msg))
+
 
 if __name__ == "__main__":
     app.run()
