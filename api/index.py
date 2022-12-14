@@ -17,11 +17,11 @@ print(type(os.getenv("LINE_CHANNEL_ACCESS_TOKEN")))
 app = Flask(__name__)
 chatgpt = ChatGPT()
 
-# domain root 
+# domain root
 @app.route('/')
 def home():
     return 'Hello, World!'
-    
+
 @app.route("/webhook", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
@@ -64,6 +64,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=reply_msg))
+
 
 if __name__ == "__main__":
     app.run()
