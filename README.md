@@ -1,4 +1,6 @@
-# GPT-Linebot using python flask on vercel
+# GPT-Linebot using python flask on vercel 
+
+> last updated: 2022/12/14
 
 本文同步更新至我的個人網站：[【Side Project】(全圖文教學) 用 Python flask 實作類似 ChatGPT 的 Linebot，並部屬至 vercel 上](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/)
 
@@ -202,17 +204,17 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 
 ## 其他環境參數功能
 
-參考自[memochou1993/gpt-ai-assistant](https://github.com/memochou1993/gpt-ai-assistant?fbclid=IwAR25uqLdKoDKEQd591fSjyM2sDJJR3Xb-VgcXDIFV_7i3RMWWv2oiyG26RQ)的作法，下列參數可藉由設定vercel的環境變數來作調控。
+參考自 [memochou1993/gpt-ai-assistant](https://github.com/memochou1993/gpt-ai-assistant?fbclid=IwAR25uqLdKoDKEQd591fSjyM2sDJJR3Xb-VgcXDIFV_7i3RMWWv2oiyG26RQ) 的作法，下列參數也可藉由設定 vercel 的環境變數來作調控。
 
 |環境變數名稱             |預設值           |說明 |
 |------------------------|--------------- |-----|
-|OPENAI_MODEL            |text-davinci-003| 請參考OpenAI2對[model](https://beta.openai.com/docs/api-reference/completions/create#completions/create-model)的敘述|
-|OPENAI_TEMPERATURE      |0               | 請參考OpenAI2對[temperature](https://beta.openai.com/docs/api-reference/completions/create#completions/create-temperature)的敘述|
-|OPENAI_FREQUENCY_PENALTY|0               | 請參考OpenAI2對[frequency_penalty](https://beta.openai.com/docs/api-reference/completions/create#completions/create-frequency_penalty)的敘述|
-|OPENAI_PRESENCE_PENALTY |0.6             | 請參考OpenAI2對[presence_penalty](https://beta.openai.com/docs/api-reference/completions/create#completions/create-presence_penalty)的敘述|
-|OPENAI_MAX_TOKENS       |240             | 請參考OpenAI2對[max_tokens](https://beta.openai.com/docs/api-reference/completions/create#completions/create-max_tokens)的敘述|
-|MSG_LIST_LIMIT          |20              | prompt參數往回參照的句數|
-|INIT_LANGUAGE           |zh              | 決定初始語言，可設置為 zh 或 en|
+| OPENAI_MODEL            | text-davinci-003 | 請參考 OpenAI 對 [model](https://beta.openai.com/docs/api-reference/completions/create#completions/create-model) 的敘述|
+| OPENAI_TEMPERATURE      | 0               | 請參考 OpenAI 對 [temperature](https://beta.openai.com/docs/api-reference/completions/create#completions/create-temperature) 的敘述|
+| OPENAI_FREQUENCY_PENALTY| 0               | 請參考 OpenAI 對 [frequency_penalty](https://beta.openai.com/docs/api-reference/completions/create#completions/create-frequency_penalty) 的敘述|
+| OPENAI_PRESENCE_PENALTY | 0.6             | 請參考 OpenAI 對 [presence_penalty](https://beta.openai.com/docs/api-reference/completions/create#completions/create-presence_penalty) 的敘述|
+| OPENAI_MAX_TOKENS       | 240             | 請參考 OpenAI 對 [max_tokens](https://beta.openai.com/docs/api-reference/completions/create#completions/create-max_tokens) 的敘述|
+| MSG_LIST_LIMIT          | 20              | prompt參數往回參照的句數|
+| INIT_LANGUAGE           | zh              | 決定初始語言，可設置為 "zh" 或 "en"|
 
 
 
