@@ -16,7 +16,7 @@ class ChatGPT:
         temperature=0,
         frequency_penalty = 0,
         presence_penalty = 0.6,
-        max_tokens=1024
+        max_tokens=240
         )
         return response['choices'][0]['text'].strip()
 
