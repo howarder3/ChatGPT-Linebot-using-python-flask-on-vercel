@@ -213,7 +213,7 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 | OPENAI_FREQUENCY_PENALTY| 0               | 請參考 OpenAI 對 [frequency_penalty](https://beta.openai.com/docs/api-reference/completions/create#completions/create-frequency_penalty) 的敘述|
 | OPENAI_PRESENCE_PENALTY | 0.6             | 請參考 OpenAI 對 [presence_penalty](https://beta.openai.com/docs/api-reference/completions/create#completions/create-presence_penalty) 的敘述|
 | OPENAI_MAX_TOKENS       | 240             | 請參考 OpenAI 對 [max_tokens](https://beta.openai.com/docs/api-reference/completions/create#completions/create-max_tokens) 的敘述|
-| MSG_LIST_LIMIT          | 20              | prompt參數往回參照的句數|
+| MSG_LIST_LIMIT          | 20              | prompt 參數往回參照的句數|
 | INIT_LANGUAGE           | zh              | 決定初始語言，可設置為 "zh" 或 "en"|
 
 
