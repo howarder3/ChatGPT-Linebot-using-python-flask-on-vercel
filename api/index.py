@@ -37,6 +37,7 @@ def callback():
 
 @line_handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    print(f"{event=}")
     global working_status
     if event.message.type != "text":
         return
@@ -65,6 +66,7 @@ def handle_message(event):
             #    event.reply_token,
             #    TextSendMessage(text="為完整呈現訊息，串接訊息會有較久的等待時間。請稍候..."))
             reply_msg, finish_reason = chatgpt.get_response()
+            print(f"{reply_msg=}")
             reply_msg = reply_msg.replace("AI:", "", 1)
             stop_condition = finish_reason=="stop"
             chatgpt.add_msg(f"AI:{reply_msg}")
@@ -75,6 +77,7 @@ def handle_message(event):
             #        event.reply_token,
             #        TextSendMessage(text="..."))
                 reply_msg_part, finish_reason = chatgpt.get_response()
+                print(f"{reply_msg_part=}")
                 stop_condition = finish_reason=="stop"
                 chatgpt.add_msg(f"{reply_msg_part}")
                 reply_msg+=reply_msg_part
@@ -84,6 +87,7 @@ def handle_message(event):
             reply_msg = reply_msg.replace("AI:", "", 1)
             chatgpt.add_msg(f"AI:{reply_msg}\n")
 
+        print(f"{reply_msg=}")
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=reply_msg))
