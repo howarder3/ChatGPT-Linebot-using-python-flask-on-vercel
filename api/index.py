@@ -60,7 +60,9 @@ def handle_message(event):
 
         # if part deal with word count limit case, else part deal with remain case
         if token_fillup and bool(re.search("(\d+字)|(字數.*\d+)",event.message.text)):
-            TextSendMessage(text="為完整呈現訊息，串接訊息會有較久的等待時間。請稍候..."))
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text="為完整呈現訊息，串接訊息會有較久的等待時間。請稍候..."))
             reply_msg, finish_reason = chatgpt.get_response()
             reply_msg = reply_msg.replace("AI:", "", 1)
             stop_condition = finish_reason=="stop"
