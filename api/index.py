@@ -5,10 +5,12 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 from api.chatgpt import ChatGPT
 
 import os
+import re
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 working_status = os.getenv("DEFALUT_TALKING", default = "true").lower() == "true"
+token_fillup = os.getenv("TOKEN_FILLUP", default = "false").lower() == "true"
 
 app = Flask(__name__)
 chatgpt = ChatGPT()
@@ -48,6 +50,7 @@ def handle_message(event):
 
     if event.message.text == "閉嘴":
         working_status = False
+        chatgpt.clean_msg()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="好的，我乖乖閉嘴 > <，如果想要我繼續說話，請跟我說 「說話」 > <"))
@@ -55,8 +58,32 @@ def handle_message(event):
 
     if working_status:
         chatgpt.add_msg(f"HUMAN:{event.message.text}?\n")
-        reply_msg = chatgpt.get_response().replace("AI:", "", 1)
-        chatgpt.add_msg(f"AI:{reply_msg}\n")
+
+        # if part deal with word count limit case, else part deal with remain case
+        if token_fillup and bool(re.search("(\d+字)|(字數.*\d+)",event.message.text)):
+            #line_bot_api.reply_message(
+            #    event.reply_token,
+            #    TextSendMessage(text="為完整呈現訊息，串接訊息會有較久的等待時間。請稍候..."))
+            reply_msg, finish_reason = chatgpt.get_response()
+            reply_msg = reply_msg.replace("AI:", "", 1)
+            stop_condition = finish_reason=="stop"
+            chatgpt.add_msg(f"AI:{reply_msg}")
+            while not stop_condition:
+            #    print("in while loop")
+            #    print(reply_msg)
+            #    line_bot_api.reply_message(
+            #        event.reply_token,
+            #        TextSendMessage(text="..."))
+                reply_msg_part, finish_reason = chatgpt.get_response()
+                stop_condition = finish_reason=="stop"
+                chatgpt.add_msg(f"{reply_msg_part}")
+                reply_msg+=reply_msg_part
+            chatgpt.add_msg(f"\n")
+        else:
+            reply_msg, _ = chatgpt.get_response()
+            reply_msg = reply_msg.replace("AI:", "", 1)
+            chatgpt.add_msg(f"AI:{reply_msg}\n")
+
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=reply_msg))
