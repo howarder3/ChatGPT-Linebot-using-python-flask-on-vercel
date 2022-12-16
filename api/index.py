@@ -69,8 +69,8 @@ def handle_message(event):
             stop_condition = finish_reason=="stop"
             chatgpt.add_msg(f"AI:{reply_msg}")
             while not stop_condition:
-                print("in while loop")
-                print(reply_msg)
+            #    print("in while loop")
+            #    print(reply_msg)
             #    line_bot_api.reply_message(
             #        event.reply_token,
             #        TextSendMessage(text="..."))
