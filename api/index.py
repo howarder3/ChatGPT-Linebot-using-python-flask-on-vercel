@@ -74,7 +74,8 @@ def handle_message(event):
                 reply_msg+=reply_msg_part
             chatgpt.add_msg(f"\n")
         else:
-            reply_msg, _ = chatgpt.get_response().replace("AI:", "", 1)
+            reply_msg, _ = chatgpt.get_response()
+            reply_msg = reply_msg.replace("AI:", "", 1)
             chatgpt.add_msg(f"AI:{reply_msg}\n")
 
         line_bot_api.reply_message(
