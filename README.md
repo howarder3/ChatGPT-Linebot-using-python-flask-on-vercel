@@ -19,7 +19,7 @@
 
 # 安裝步驟
 
-主要會有四個地方要去：(`這部份不看也沒關係，以下照著做就可以了！`)
+主要會有四個地方要去，`記得帳號都要先註冊`：(`這部份不看也沒關係，以下照著做就可以了！`)
 
 * 我的 github repo：透過 python 串接 openai 的 API，並透過 linebot sdk 提供簡單的訊息回復
 * openai：申請 OpenAI 的 API KEY
@@ -44,6 +44,8 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 ## step 2. 申請 OpenAI 的 API KEY
 
 可以直接去[這裡]( https://beta.openai.com/docs/quickstart/build-your-application "這裡")，一直往下拉，找到這個按鈕，並生成一個 API KEY
+
+> 看不到按鈕，可能是因為你還沒有註冊 or 登入XD
 
 
 
@@ -179,6 +181,10 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 
 [![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午9.29.23.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-13-%e4%b8%8b%e5%8d%889-29-23/)
 
+
+
+到這邊！我們就完成全部的步驟囉！！！
+可以開始聊天了！！！
 
 
 # 完成圖範例
