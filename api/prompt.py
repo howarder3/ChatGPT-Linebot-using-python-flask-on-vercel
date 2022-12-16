@@ -23,3 +23,7 @@ class Prompt:
 
     def generate_prompt(self):
         return '\n'.join(self.msg_list)
+
+    def clean_msg(self):
+        self.msg_list = []
+        self.msg_list.append(f"AI:{LANGUAGE_TABLE[chat_language]}")

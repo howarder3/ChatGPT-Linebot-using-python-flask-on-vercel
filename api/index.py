@@ -50,6 +50,7 @@ def handle_message(event):
 
     if event.message.text == "閉嘴":
         working_status = False
+        chatgpt.clean_msg()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="好的，我乖乖閉嘴 > <，如果想要我繼續說話，請跟我說 「說話」 > <"))
