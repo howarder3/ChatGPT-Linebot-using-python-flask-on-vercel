@@ -44,8 +44,11 @@ def handle_message(event):
     if event.message.text == "version":
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=f"GPT-Linebot-python-flask-on-vercel, version {VERSION_MAJOR}.{VERSION_MINOR}.{VERSION_PATCH}." 
-            +"\nThis project is contributed by @howarder3, @w95wayne10."))
+            TextSendMessage(text=(
+                f"GPT-Linebot-python-flask-on-vercel, version {VERSION_MAJOR}.{VERSION_MINOR}.{VERSION_PATCH}. " 
+                f"This project is contributed by @howarder3, @w95wayne10."
+                )
+            )
         return
         
 
