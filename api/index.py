@@ -49,6 +49,7 @@ def handle_message(event):
                 f"This project is contributed by @howarder3, @w95wayne10."
                 )
             )
+        )
         return
         
 
