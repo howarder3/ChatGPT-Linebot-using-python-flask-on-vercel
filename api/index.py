@@ -1,16 +1,15 @@
 from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
-from linebot.models import MessageEvent, TextMessage, TextSendMessage
+from linebot.models import MessageEvent, TextMessage, TextSendMessage, MessageAction, QuickReplyButton, QuickReply
+from api.version import VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH
 from api.chatgpt import ChatGPT
 
 import os
-import re
 
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 working_status = os.getenv("DEFALUT_TALKING", default = "true").lower() == "true"
-token_fillup = os.getenv("TOKEN_FILLUP", default = "false").lower() == "true"
 
 app = Flask(__name__)
 chatgpt = ChatGPT()
@@ -42,6 +41,13 @@ def handle_message(event):
     if event.message.type != "text":
         return
 
+    if event.message.type == "version":
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=f"GPT-Linebot-python-flask-on-vercel version {VERSION_MAJOR}.{VERSION_MINOR}.{VERSION_PATCH}. This project is contributed by @howarder3, @w95wayne10."))
+        return
+        
+
     if event.message.text == "說話":
         working_status = True
         line_bot_api.reply_message(
@@ -58,39 +64,32 @@ def handle_message(event):
         return
 
     if working_status:
-        chatgpt.add_msg(f"Q:{event.message.text}?\n")
+        ###### experiment part ######
+        if event.message.text.startswith("!"):
+            chatgpt.add_msg(f"Q:{event.message.text.replace('!', '', 1)}\n")
+            reply_msg = chatgpt.get_response()
+            text_msg_with_quickreply = TextSendMessage(text=reply_msg,
+                quick_reply=QuickReply(
+                items=[
+                    QuickReplyButton(action=MessageAction(label="繼續", text="繼續"))
+                ]
+                )
+            )
+            line_bot_api.reply_message(
+                event.reply_token, text_msg_with_quickreply)
+            return 
+        ###### ###### ###### ######
 
-        # if part deal with word count limit case, else part deal with remain case
-        if token_fillup and bool(re.search("(\d+字)|(字數.*\d+)",event.message.text)):
-            #line_bot_api.reply_message(
-            #    event.reply_token,
-            #    TextSendMessage(text="為完整呈現訊息，串接訊息會有較久的等待時間。請稍候..."))
-            reply_msg, finish_reason = chatgpt.get_response()
-            print(f"{reply_msg=}")
-            reply_msg = reply_msg.replace("A:", "", 1)
-            stop_condition = finish_reason=="stop"
-            chatgpt.add_msg(f"A:{reply_msg}")
-            while not stop_condition:
-            #    print("in while loop")
-            #    print(reply_msg)
-            #    line_bot_api.reply_message(
-            #        event.reply_token,
-            #        TextSendMessage(text="..."))
-                reply_msg_part, finish_reason = chatgpt.get_response()
-                print(f"{reply_msg_part=}")
-                stop_condition = finish_reason=="stop"
-                chatgpt.add_msg(f"{reply_msg_part}")
-                reply_msg+=reply_msg_part
-            chatgpt.add_msg(f"\n")
+        chatgpt.add_msg(f"Q:{event.message.text}\n")
+        if chatgpt.if_contains_word(event.message.text):
+            reply_msg = chatgpt.get_long_response()
         else:
-            reply_msg, _ = chatgpt.get_response()
-            reply_msg = reply_msg.replace("A:", "", 1)
-            chatgpt.add_msg(f"A:{reply_msg}\n")
-
-        print(f"{reply_msg=}")
+            reply_msg = chatgpt.get_response()
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=reply_msg))
+
+
 
 
 if __name__ == "__main__":
