@@ -6,7 +6,7 @@ import openai
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-token_fillup = os.getenv("TOKEN_FILLUP", default = "true").lower() == "true" # need to change back to "false" before release
+token_fillup = os.getenv("TOKEN_FILLUP", default = "false").lower() == "true" # need to change back to "false" before release
 
 class ChatGPT:
     def __init__(self):
