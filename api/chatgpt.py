@@ -18,9 +18,12 @@ class ChatGPT:
         self.max_tokens = int(os.getenv("OPENAI_MAX_TOKENS", default = 240))
 
     def get_response(self):
-        reply_msg = self.get_openai_reposnse()[0].replace('A:', '', 1)
+        reply_msg, finish_reason = self.get_openai_reposnse()
+        reply_msg = reply_msg.replace('A:', '', 1)
         self.prompt.add_msg(f"A:{reply_msg}\n")
-        return reply_msg
+        if finish_reason != "stop":
+            return reply_msg, False
+        return reply_msg, True
         
     def get_long_response(self):
         reply_msg, finish_reason = self.get_openai_reposnse()

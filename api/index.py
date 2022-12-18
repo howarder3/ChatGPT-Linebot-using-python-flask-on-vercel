@@ -64,30 +64,35 @@ def handle_message(event):
         return
 
     if working_status:
-        ###### experiment part ######
-        if event.message.text.startswith("!"):
-            chatgpt.add_msg(f"Q:{event.message.text.replace('!', '', 1)}\n")
-            reply_msg = chatgpt.get_response()
-            text_msg_with_quickreply = TextSendMessage(text=reply_msg,
-                quick_reply=QuickReply(
-                items=[
-                    QuickReplyButton(action=MessageAction(label="繼續", text="繼續"))
-                ]
-                )
-            )
-            line_bot_api.reply_message(
-                event.reply_token, text_msg_with_quickreply)
-            return 
-        ###### ###### ###### ######
-
         chatgpt.add_msg(f"Q:{event.message.text}\n")
         if chatgpt.if_contains_word(event.message.text):
             reply_msg = chatgpt.get_long_response()
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text=reply_msg))
         else:
-            reply_msg = chatgpt.get_response()
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=reply_msg))
+            reply_msg, finish_response = chatgpt.get_response()
+            if finish_response:
+                line_bot_api.reply_message(
+                    event.reply_token,
+                    TextSendMessage(text=reply_msg))
+            else:
+                line_bot_api.reply_message(
+                    event.reply_token, 
+                    TextSendMessage(text=reply_msg,
+                        quick_reply=QuickReply(
+                            items=[
+                                QuickReplyButton(action=MessageAction(label="繼續", text="繼續"))
+                            ]
+                        )
+                    )
+                )
+
+
+
+            
+
+
 
 
 
