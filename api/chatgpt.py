@@ -6,7 +6,7 @@ import openai
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-token_fillup = os.getenv("TOKEN_FILLUP", default = "false").lower() == "true"
+token_fillup = os.getenv("TOKEN_FILLUP", default = "true").lower() == "true" # need to change back to "false" before release
 
 class ChatGPT:
     def __init__(self):
@@ -18,21 +18,19 @@ class ChatGPT:
         self.max_tokens = int(os.getenv("OPENAI_MAX_TOKENS", default = 240))
 
     def get_response(self):
-        reply_msg = self.get_openai_reposnse()[0]
+        reply_msg = self.get_openai_reposnse()[0].replace('A:', '', 1)
         self.prompt.add_msg(f"A:{reply_msg}\n")
-        return reply_msg.replace("A:", "", 1)
+        return reply_msg
         
-
     def get_long_response(self):
         reply_msg, finish_reason = self.get_openai_reposnse()
-        reply_msg = reply_msg.replace("A:", "", 1)
-        self.prompt.add_msg(f"A:{reply_msg}")
+        self.prompt.add_msg(f"A:{reply_msg.replace('A:', '', 1)}")
         while finish_reason != "stop":
             reply_msg, finish_reason = self.get_openai_reposnse()
-            self.prompt[-1] += reply_msg.replace("A:", "", 1)
+            self.prompt[-1] += reply_msg.replace('A:', '', 1)
         self.prompt[-1] += "\n"
         
-        return self.prompt[-1].replace("A:", "", 1)
+        return self.prompt[-1].replace('A:', '', 1)
 
     def get_openai_reposnse(self):
         print(self.prompt.generate_prompt())
