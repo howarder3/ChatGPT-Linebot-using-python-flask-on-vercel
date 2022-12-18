@@ -58,7 +58,7 @@ def handle_message(event):
         return
 
     if working_status:
-        chatgpt.add_msg(f"HUMAN:{event.message.text}?\n")
+        chatgpt.add_msg(f"Q:{event.message.text}?\n")
 
         # if part deal with word count limit case, else part deal with remain case
         if token_fillup and bool(re.search("(\d+字)|(字數.*\d+)",event.message.text)):
@@ -67,9 +67,9 @@ def handle_message(event):
             #    TextSendMessage(text="為完整呈現訊息，串接訊息會有較久的等待時間。請稍候..."))
             reply_msg, finish_reason = chatgpt.get_response()
             print(f"{reply_msg=}")
-            reply_msg = reply_msg.replace("AI:", "", 1)
+            reply_msg = reply_msg.replace("A:", "", 1)
             stop_condition = finish_reason=="stop"
-            chatgpt.add_msg(f"AI:{reply_msg}")
+            chatgpt.add_msg(f"A:{reply_msg}")
             while not stop_condition:
             #    print("in while loop")
             #    print(reply_msg)
@@ -84,8 +84,8 @@ def handle_message(event):
             chatgpt.add_msg(f"\n")
         else:
             reply_msg, _ = chatgpt.get_response()
-            reply_msg = reply_msg.replace("AI:", "", 1)
-            chatgpt.add_msg(f"AI:{reply_msg}\n")
+            reply_msg = reply_msg.replace("A:", "", 1)
+            chatgpt.add_msg(f"A:{reply_msg}\n")
 
         print(f"{reply_msg=}")
         line_bot_api.reply_message(
