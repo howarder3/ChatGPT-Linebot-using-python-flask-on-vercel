@@ -35,6 +35,7 @@ class ChatGPT:
         return self.prompt[-1].replace("A:", "", 1)
 
     def get_openai_reposnse(self):
+        print(self.prompt.generate_prompt())
         response = openai.Completion.create(
             model=self.model,
             prompt=self.prompt.generate_prompt(),
