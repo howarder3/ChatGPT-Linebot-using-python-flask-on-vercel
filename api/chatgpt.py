@@ -51,8 +51,8 @@ class ChatGPT:
     def clean_msg(self):
         self.prompt.clear()
 
-    def if_contains_word(self):
-        return token_fillup and bool(re.search("(\d+字)|(字數.*\d+)", ))
+    def if_contains_word(self, s):
+        return token_fillup and bool(re.search("(\d+字)|(字數.*\d+)", s))
 
 
         
