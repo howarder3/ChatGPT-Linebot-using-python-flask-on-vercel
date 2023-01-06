@@ -10,6 +10,8 @@
     - [openAI API 申請](#openai-api-申請)
     - [LINE Bot 機器人申請](#line-bot-機器人申請)
   - [步驟四，建立 .env 檔案](#步驟四建立-env-檔案)
+    - [建立 .env](#建立-env)
+    - [填入 .env](#填入-env)
   - [步驟五，執行 Flask](#步驟五執行-flask)
   - [步驟六，使用 ngrok 進行連線](#步驟六使用-ngrok-進行連線)
   - [完成](#完成)
@@ -66,7 +68,19 @@ pip install -r requirements.txt
 
 ## 步驟四，建立 .env 檔案
 
-讓我們的程式可以與 LINE 及 ChatGPT 一起動。 XD
+### 建立 .env
+
+建立這個檔案在與 ```api``` 資料夾同一層。
+
+```shell
+.
+├─.venv
+├ .env # 這邊
+└─api
+
+```
+
+### 填入 .env
 
 ***必填*** 的部分一定要填 !
 
