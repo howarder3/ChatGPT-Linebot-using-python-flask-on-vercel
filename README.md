@@ -54,11 +54,15 @@ pip install -r requirements.txt
 
 ### openAI API 申請
 
-網址：<https://github.com/howarder3/GPT-Linebot-python-flask-on-vercel#step-2-%E7%94%B3%E8%AB%8B-openai-%E7%9A%84-api-key>
+> 建議點擊網址前按下 ctrl ，會另開分頁喔 !
+
+申請步驟：<https://github.com/howarder3/GPT-Linebot-python-flask-on-vercel#step-2-%E7%94%B3%E8%AB%8B-openai-%E7%9A%84-api-key>
 
 ### LINE Bot 機器人申請
 
-網址：<https://github.com/howarder3/GPT-Linebot-python-flask-on-vercel#step-3-%E5%8E%BB-line-developer-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E6%A9%9F%E5%99%A8%E4%BA%BA>
+> 建議點擊網址前按下 ctrl ，會另開分頁喔 !
+
+申請步驟：<https://github.com/howarder3/GPT-Linebot-python-flask-on-vercel#step-3-%E5%8E%BB-line-developer-%E5%BB%BA%E7%AB%8B%E4%B8%80%E5%80%8B%E6%96%B0%E7%9A%84%E6%A9%9F%E5%99%A8%E4%BA%BA>
 
 ## 步驟四，建立 .env 檔案
 
@@ -97,12 +101,15 @@ Press CTRL+C to quit
 ```
 
 注意：
+
 注意：
-注意：
+
 注意：
 
 不要點 CTRL+C，程式會關閉。
+
 不要點 CTRL+C，程式會關閉。
+
 不要點 CTRL+C，程式會關閉。
 
 ## 步驟六，使用 ngrok 進行連線
