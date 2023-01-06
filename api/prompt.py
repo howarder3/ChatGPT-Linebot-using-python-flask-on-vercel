@@ -1,8 +1,9 @@
 import os
+import variables
 
-chat_language = os.getenv("INIT_LANGUAGE", default = "zh")
+chat_language = variables.INIT_LANGUAGE
 
-MSG_LIST_LIMIT = int(os.getenv("MSG_LIST_LIMIT", default = 20))
+MSG_LIST_LIMIT = variables.MSG_LIST_LIMIT
 LANGUAGE_TABLE = {
   "zh": "哈囉！",
   "en": "Hello!"
