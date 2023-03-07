@@ -16,7 +16,7 @@ chatgpt = ChatGPT()
 # domain root
 @app.route('/')
 def home():
-    return '這是一個使用 ChatGPT 機器人'
+    return '這是一個使用 ChatGPT 的機器人'
 
 @app.route("/webhook", methods=['POST'])
 def callback():
