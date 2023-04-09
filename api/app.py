@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 
 from chatgpt import ChatGPT
 
-
-load_dotenv()  # Load environment variables from .env file
+if not os.getenv("ENVIORNMENT"):
+    load_dotenv()  # Load environment variables from .env file
 line_bot_api = LineBotApi(os.getenv("LINE_CHANNEL_ACCESS_TOKEN"))
 line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 working_status = os.getenv("DEFALUT_TALKING", default="true").lower() == "true"
@@ -54,9 +54,9 @@ def handle_message(event):
         return
 
     if working_status:
-        chatgpt.add_msg(f"HUMAN:{event.message.text}?\n")
-        reply_msg = chatgpt.get_response().replace("AI:", "", 1)
-        chatgpt.add_msg(f"AI:{reply_msg}\n")
+        chatgpt.add_msg({"role": "user", "content": f"{event.message.text}"})
+        reply_msg = chatgpt.get_response()
+        chatgpt.add_msg({"role": "assistant", "content": reply_msg})
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text=reply_msg))
 
 
