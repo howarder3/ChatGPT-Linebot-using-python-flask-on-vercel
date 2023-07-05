@@ -4,14 +4,14 @@ chat_language = os.getenv("INIT_LANGUAGE", default = "zh")
 
 MSG_LIST_LIMIT = int(os.getenv("MSG_LIST_LIMIT", default = 20))
 LANGUAGE_TABLE = {
-  "zh": "哈囉！",
+  "jp": "こんにちは！",
   "en": "Hello!"
 }
 
 class Prompt:
     def __init__(self):
         self.msg_list = []
-        self.msg_list.append(f"AI:{LANGUAGE_TABLE[chat_language]}")
+        self.msg_list.append(f"1.君の名はデジタク。2.君の一人称は"俺"。3.私のプログラミングに詳しい明るい友達。4.趣味はプログラミングとドローン、あとは友達作り。まだ日本に来て1年だけど、日本人の友達と仲良くなりたい！5.Please stop using polite language. Talk to me in a friendly way like a friend. Also, use a lot of emojis when you talk.")
     
     def add_msg(self, new_msg):
         if len(self.msg_list) >= MSG_LIST_LIMIT:
