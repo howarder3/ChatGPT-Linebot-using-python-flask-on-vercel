@@ -2,7 +2,7 @@ from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
-from api.chatgpt import ChatGPT
+from openai import ChatCompletion
 
 import os
 
@@ -11,7 +11,7 @@ line_handler = WebhookHandler(os.getenv("LINE_CHANNEL_SECRET"))
 working_status = os.getenv("DEFALUT_TALKING", default = "true").lower() == "true"
 
 app = Flask(__name__)
-chatgpt = ChatGPT()
+chatgpt = ChatCompletion (model="gpt-3.5-turbo")
 
 # domain root
 @app.route('/')
@@ -39,24 +39,24 @@ def handle_message(event):
     if event.message.type != "text":
         return
 
-    if event.message.text == "說話":
+    if event.message.text == "デジタク起きて！":
         working_status = True
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="我可以說話囉，歡迎來跟我互動 ^_^ "))
+            TextSendMessage(text="おはよう！ ^_^ "))
         return
 
-    if event.message.text == "閉嘴":
+    if event.message.text == "デジタク休んで！":
         working_status = False
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="好的，我乖乖閉嘴 > <，如果想要我繼續說話，請跟我說 「說話」 > <"))
+            TextSendMessage(text="わかった！ > <，用事がある時、「デジタク起きて！」送ってね > <"))
         return
 
     if working_status:
         chatgpt.add_msg(f"HUMAN:{event.message.text}?\n")
-        reply_msg = chatgpt.get_response().replace("AI:", "", 1)
-        chatgpt.add_msg(f"AI:{reply_msg}\n")
+        reply_msg = chatgpt.create (messages=chatgpt.prompt.generate_prompt ()).choices [0].message.content.replace ("デジタク:", "", 1)
+        chatgpt.add_msg(f"デジタク:{reply_msg}\n")
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=reply_msg))
