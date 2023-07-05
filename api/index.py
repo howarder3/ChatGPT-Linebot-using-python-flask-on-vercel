@@ -39,18 +39,18 @@ def handle_message(event):
     if event.message.type != "text":
         return
 
-    if event.message.text == "說話":
+    if event.message.text == "デジタク起きて！":
         working_status = True
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="我可以說話囉，歡迎來跟我互動 ^_^ "))
+            TextSendMessage(text="おはよう！ ^_^ "))
         return
 
-    if event.message.text == "閉嘴":
+    if event.message.text == "デジタク休んで！":
         working_status = False
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="好的，我乖乖閉嘴 > <，如果想要我繼續說話，請跟我說 「說話」 > <"))
+            TextSendMessage(text="わかった！ > <，用事がある時、「デジタク起きて！」送ってね > <"))
         return
 
     if working_status:
