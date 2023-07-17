@@ -60,7 +60,7 @@ def handle_message(event):
             TextSendMessage(text="主人您好!"))
         return
     
-
+"""
     if working_status:
         chatgpt.add_msg(f"HUMAN:{event.message.text}?\n")
         reply_msg = chatgpt.get_response().replace("AI:", "", 1)
@@ -68,7 +68,7 @@ def handle_message(event):
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=reply_msg))
-
+"""
 
 if __name__ == "__main__":
     app.run()
