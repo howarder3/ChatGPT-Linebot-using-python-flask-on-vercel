@@ -18,6 +18,19 @@ chatgpt = ChatGPT()
 def home():
     return 'Hello, World!'
 
+@app.route('/1')
+def home1():
+    return 'Hello, World! - 1'
+
+@app.route('/2')
+def home2():
+    return 'Hello, World! - 2'
+
+@app.route('/3')
+def home3():
+    return 'Hello, World! - 3'
+
+
 @app.route("/webhook", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
