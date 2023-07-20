@@ -113,7 +113,7 @@ def handle_message(event):
         working_status = False
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="主人您好!"))
+            TextSendMessage(text="主人您好!午安!"))
         return
     
     if event.message.text == "JL2":
