@@ -67,7 +67,25 @@ def handle_message(event):
     global working_status
     if event.message.type != "text":
         return
+    
+    if event.message.text == "init":
+        LineRichMenu.createRichMenu(line_bot_api)
+        LineRichMenu.UploadMenuImage(line_bot_api)
+        return
 
+    if event.message.text == "upload":
+        LineRichMenu.UploadMenuImage(line_bot_api)
+        return
+
+    if event.message.text == "show":
+        LineRichMenu.showRichMenu(line_bot_api)
+        return
+        
+
+    if event.message.text == "delete":
+        LineRichMenu.deleteAllRichMenus(line_bot_api)
+        return
+        
     if event.message.text == "說話":
         working_status = True
         line_bot_api.reply_message(
