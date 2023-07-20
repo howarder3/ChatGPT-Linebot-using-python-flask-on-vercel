@@ -49,31 +49,41 @@ class LineRichMenu:
         req = requests.request('POST', 'https://api.line.me/v2/bot/richmenu',
                             headers=headers,data=json.dumps(body).encode('utf-8'))
         # 印出得到的結果
-        print(req.text)
+        #print(req.text)
+        return req.text
 
     def UploadMenuImage(lineAccessToken):
-   
         line_bot_api = LineBotApi(lineAccessToken)
         with open('/resources/TestMenu_for_RichMenu.png', 'rb') as f:
             line_bot_api.set_rich_menu_image('你的圖文選單 ID', 'image/png', f)
+                #print(req.text)
+        return f.name
 
     def showRichMenu(lineAccessToken):
         headers = {'Authorization':'Bearer ' + lineAccessToken}
         req = requests.request('POST', 'https://api.line.me/v2/bot/user/all/richmenu/你的圖文選單 ID', headers=headers)
-        print(req.text)
+        #print(req.text)
+        return req.text
 
     def listRichMenu(lineAccessToken):
         line_bot_api = LineBotApi(lineAccessToken)
         rich_menu_list = line_bot_api.get_rich_menu_list()
+        rich_menu_list_text = ''
         for rich_menu in rich_menu_list:
-            print(rich_menu.rich_menu_id)
+            #print(rich_menu.rich_menu_id)
+            rich_menu_list_text += rich_menu.rich_menu_id +'\n'
+        return rich_menu_list_text
 
     def deleteAllRichMenus(lineAccessToken):
         line_bot_api = LineBotApi(lineAccessToken)
         rich_menu_list = line_bot_api.get_rich_menu_list()
+        rich_menu_list_text = ''
         for rich_menu in rich_menu_list:
             line_bot_api.delete_rich_menu(rich_menu.rich_menu_id)
-
+            rich_menu_list_text += rich_menu.rich_menu_id +'\n'
+        return rich_menu_list_text
+    
     def deleteRichMenu(lineAccessToken, rich_menu_id):
         line_bot_api = LineBotApi(lineAccessToken)
         line_bot_api.delete_rich_menu(rich_menu_id)
+        return rich_menu_id

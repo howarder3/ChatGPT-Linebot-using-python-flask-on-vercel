@@ -69,21 +69,30 @@ def handle_message(event):
         return
     
     if event.message.text == "init":
-        LineRichMenu.createRichMenu(line_bot_api)
-        LineRichMenu.UploadMenuImage(line_bot_api)
-        return
-
-    if event.message.text == "upload":
-        LineRichMenu.UploadMenuImage(line_bot_api)
+        #LineRichMenu.createRichMenu(line_bot_api)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text='created=>' + LineRichMenu.createRichMenu(line_bot_api)))
+        #LineRichMenu.UploadMenuImage(line_bot_api)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text='upload=>' + LineRichMenu.UploadMenuImage(line_bot_api)))
         return
 
     if event.message.text == "show":
-        LineRichMenu.showRichMenu(line_bot_api)
+        #LineRichMenu.showRichMenu(line_bot_api)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text='show=>' + LineRichMenu.showRichMenu(line_bot_api)))        
         return
         
 
     if event.message.text == "delete":
         LineRichMenu.deleteAllRichMenus(line_bot_api)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text='deleted=>' + LineRichMenu.deleteAllRichMenus(line_bot_api)))        
+
         return
         
     if event.message.text == "說話":
