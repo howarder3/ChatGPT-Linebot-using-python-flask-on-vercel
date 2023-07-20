@@ -3,6 +3,7 @@ from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
 from api.chatgpt import ChatGPT
+from api.lineRichMenu import LineRichMenu
 
 import os
 
@@ -30,6 +31,21 @@ def home2():
 def home3():
     return 'Hello, World! - 3'
 
+@app.route('/initMenu')
+def initMenu():
+    LineRichMenu.createRichMenu(line_bot_api)
+    LineRichMenu.UploadMenuImage(line_bot_api)
+    return 'initMenu'
+
+@app.route('/showMenu')
+def showMenu():
+    LineRichMenu.showRichMenu(line_bot_api)
+    return 'showMenu'
+
+@app.route('/deleteAllMenu')
+def showMenu():
+    LineRichMenu.deleteAllRichMenus(line_bot_api)
+    return 'deleteAllMenu'
 
 @app.route("/webhook", methods=['POST'])
 def callback():
