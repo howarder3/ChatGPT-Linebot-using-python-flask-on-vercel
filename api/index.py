@@ -68,7 +68,7 @@ def handle_message(event):
     if event.message.type != "text":
         return
     
-    if event.message.text == "init":
+    if event.message.text.upper == "INIT":
         #LineRichMenu.createRichMenu(line_bot_api)
         line_bot_api.reply_message(
             event.reply_token,
@@ -79,7 +79,7 @@ def handle_message(event):
             TextSendMessage(text='upload=>' + LineRichMenu.UploadMenuImage(line_bot_api)))
         return
 
-    if event.message.text == "show":
+    if event.message.tex.upper == "SHOW":
         #LineRichMenu.showRichMenu(line_bot_api)
         line_bot_api.reply_message(
             event.reply_token,
@@ -87,7 +87,7 @@ def handle_message(event):
         return
         
 
-    if event.message.text == "delete":
+    if event.message.text.upper == "DELETE":
         LineRichMenu.deleteAllRichMenus(line_bot_api)
         line_bot_api.reply_message(
             event.reply_token,
@@ -116,6 +116,18 @@ def handle_message(event):
             TextSendMessage(text="主人您好!"))
         return
     
+    if event.message.text == "JL2":
+        working_status = False
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="主人您好棒!"))
+        return
+    
+    working_status = False
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text="主人，我看不懂!"))
+
 """
     if working_status:
         chatgpt.add_msg(f"HUMAN:{event.message.text}?\n")
