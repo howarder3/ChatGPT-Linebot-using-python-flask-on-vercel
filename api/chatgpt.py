@@ -1,5 +1,4 @@
 from api.prompt import Prompt
-
 import os
 from openai import OpenAI
 client = OpenAI()
