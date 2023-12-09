@@ -1,10 +1,14 @@
 # GPT-Linebot using python flask on vercel 
 
+> 作者註：本專案因為作者我的免費 API 額度已經用完了，然後我現在使用的是 ChatGPT Plus，
+> 如果之後要我本人更新可能要等我哪天改用 ChatGPT API 了...
+> 現在最新的版本感謝網友 @willismax 提供的 PR：https://github.com/howarder3/GPT-Linebot-python-flask-on-vercel/pull/17
+> 但同樣的因為我沒有 ChatGPT API 的額度了... 所以也沒辦法測就直接 merge 了，如果不能動在請大家幫忙發個 PR，感謝大大們🙏
+
 * last updated: 2023/10/9
   - 更新說明 by [willismax](willismax/GPT-Linebot-python-flask-on-vercel)
     - vercel.json修正，改為第2版
     - 修正單純安裝Flask==2.2.2 會與 Werkzeug 衝突的問題，在 requirements.txt 添加 Werkzeug==2.3.7 ([參考stack overflow](https://stackoverflow.com/questions/77213053/importerror-cannot-import-name-url-quote-from-werkzeug-urls))
-
 
 > `本篇教學無經驗的新手也可學習，無須寫任何程式。`
 > 
@@ -236,7 +240,6 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 
 # 靈感來源
 * 本文同步更新至我的個人網站：[【Side Project】(全圖文教學) 用 Python flask 實作類似 ChatGPT 的 Linebot，並部屬至 vercel 上](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/)
-
 * 感謝 [memochou1993/gpt-ai-assistant](https://github.com/memochou1993/gpt-ai-assistant?fbclid=IwAR25uqLdKoDKEQd591fSjyM2sDJJR3Xb-VgcXDIFV_7i3RMWWv2oiyG26RQ) 提供的 node.js 版本串接 vercel 示範，讓我有了想把 python linebot 也串進 vercel 的靈感，(目前感覺下來，免費又好用(?))
 * 感謝 [Lanznx/HealthLineBot](https://github.com/Lanznx/HealthLineBot) 給了一個很好的 python Django 範例，然而我不會 Django XD，vercel 官方文件好像也沒有提到這部份，總之後來就改成了 flask 版本，也符合 linebot 推薦的範例。
 
