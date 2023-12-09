@@ -1,8 +1,11 @@
 # GPT-Linebot using python flask on vercel 
 
 > 作者註：本專案因為作者我的免費 API 額度已經用完了，然後我現在使用的是 ChatGPT Plus，
+> 
 > 如果之後要我本人更新可能要等我哪天改用 ChatGPT API 了...
+> 
 > 現在最新的版本感謝網友 @willismax 提供的 PR：https://github.com/howarder3/GPT-Linebot-python-flask-on-vercel/pull/17
+> 
 > 但同樣的因為我沒有 ChatGPT API 的額度了... 所以也沒辦法測就直接 merge 了，如果不能動在請大家幫忙發個 PR，感謝大大們🙏
 
 * last updated: 2023/10/9
