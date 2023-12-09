@@ -11,7 +11,7 @@
 > 如果不能動再請大家幫忙發個 Issues/PR，感謝大大們🙏
 
 * last updated: 2023/10/9
-  - 更新說明 by [willismax](willismax/GPT-Linebot-python-flask-on-vercel)
+  - 更新說明 by @willismax，與修正的 [repo](https://github.com/willismax/GPT-Linebot-python-flask-on-vercel) (merged)
     - vercel.json修正，改為第2版
     - 修正單純安裝Flask==2.2.2 會與 Werkzeug 衝突的問題，在 requirements.txt 添加 Werkzeug==2.3.7 ([參考stack overflow](https://stackoverflow.com/questions/77213053/importerror-cannot-import-name-url-quote-from-werkzeug-urls))
 
