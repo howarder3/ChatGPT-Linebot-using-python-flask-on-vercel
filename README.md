@@ -1,12 +1,14 @@
-# GPT-Linebot using python flask on vercel 
+# ChatGPT-Linebot using python flask on vercel 
 
-> 作者註：本專案因為作者我的免費 API 額度已經用完了，然後我現在使用的是 ChatGPT Plus，
+> 作者註：本專案因為作者我的免費 API 額度已經用完了，然後我現在使用的是 `ChatGPT Plus`，
 > 
 > 如果之後要我本人更新可能要等我哪天改用 ChatGPT API 了...
 > 
 > 現在最新的版本感謝網友 @willismax 提供的 PR：https://github.com/howarder3/GPT-Linebot-python-flask-on-vercel/pull/17
 > 
-> 但同樣的因為我沒有 ChatGPT API 的額度了... 所以也沒辦法測就直接 merge 了，如果不能動在請大家幫忙發個 PR，感謝大大們🙏
+> 但同樣的因為我沒有 ChatGPT API 的額度了... 所以也沒辦法測就直接 merge 了，
+>
+> 如果不能動再請大家幫忙發個 Issues/PR，感謝大大們🙏
 
 * last updated: 2023/10/9
   - 更新說明 by [willismax](willismax/GPT-Linebot-python-flask-on-vercel)
@@ -17,14 +19,16 @@
 > 
 > 無經驗預計 15 ~ 20 分鐘都可以完成。老手最快可能 5 分鐘就搞定
 
-* 這是使用 python flask 套件撰寫的 gpt-linebot
-* `不需寫 code`，只需去網頁設定一些內容，新手 15 分鐘內也能建立自己的 gpt-linebot
+* 這是使用 python flask 套件撰寫的 ChatGPT-Linebot
+* `不需寫 code`，只需去網頁設定一些內容，新手 15 分鐘內也能建立自己的 ChatGPT-Linebot
 * Why flask? 簡單好用，且支援 vercel
 * Why vercel? `免費`！！！免費額度就很夠一般使用，是 heroku 不再免費後的好選擇
 
-> 註：ChatGPT 與 gpt 是同樣任務的模型，而目前透過 API 只能使用到 GPT-3 (本程式使用的方法)
+> ~~註：ChatGPT 與 gpt 是同樣任務的模型，而目前透過 API 只能使用到 GPT-3 (本程式使用的方法)~~
 > 
-> 而非 ChatGPT 使用的 GPT-3.5
+> ~~而非 ChatGPT 使用的 GPT-3.5~~
+>
+> 已經改為 GPT-4，與最新的 ChatGPT 相同，只是改為使用 OpenAI API 的方式實現
 
 # 安裝步驟
 
