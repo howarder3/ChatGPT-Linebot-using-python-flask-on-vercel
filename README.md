@@ -52,7 +52,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 
 > `可以的話，旁邊的 Star 也幫我按一下，是對創作者最大的鼓勵！`
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午7.27.12.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-13-%e4%b8%8b%e5%8d%887-27-12/)
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午7.27.12.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午7.27.12.png)
 
 ## step 2. 申請 OpenAI 的 API KEY
 
@@ -60,7 +60,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 
 
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午6.11.22.png)](https://www.wongwonggoods.com/?attachment_id=8016)
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午6.11.22.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午6.11.22.png)
 
 
 > 請務必複製下來，這個 KEY 我們取名為 `OPENAI_API_KEY `
@@ -74,7 +74,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 我們先到[ line developer 的首頁](https://developers.line.biz/zh-hant/ " line developer 的首頁")註冊一下，
 註冊完後，點選 Messaging API。
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午6.32.33.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-13-%e4%b8%8b%e5%8d%886-32-33/)
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午6.32.33.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午6.32.33.png)
 
 ### step 3-1. 創建新的 channel
 
@@ -84,7 +84,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 這邊以下都照自己想要的名字跟事實填就好。
 
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午6.36.49.png)](https://www.wongwonggoods.com/?attachment_id=8019)
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午6.36.49.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午6.36.49.png)
 
 ### step 3-2. 在 Basic Settings 的分頁，取得 LINE_CHANNEL_SECRET
 
@@ -92,7 +92,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 在 Basic Settings 的分頁，往下找到 channel secret
 
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午6.40.36.png)](https://www.wongwonggoods.com/?attachment_id=8021)
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午6.40.36.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午6.40.36.png)
 
 
 
@@ -111,7 +111,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 我自己是設定如下：
 
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午6.41.06.png)](https://www.wongwonggoods.com/?attachment_id=8022)
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午6.41.06.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午6.41.06.png)
 
 
 * 允許加入群組要注意使用 openai 額度可能會超快
@@ -125,7 +125,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 
 
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午6.41.14.png)](https://www.wongwonggoods.com/?attachment_id=8020)
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午6.41.14.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午6.41.14.png)
 
 
 
@@ -148,7 +148,7 @@ fork 一份檔案到自己的帳號底下，等等我們會使用到
 
 Import Git Repository，選擇你剛剛 fork 的專案 import
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午7.39.19.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-13-%e4%b8%8b%e5%8d%887-39-19/)
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午7.39.19.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午7.39.19.png)
 
 ### step 4-2. 設定環境變數
 
@@ -158,13 +158,13 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 
 
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午7.46.13.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-13-%e4%b8%8b%e5%8d%887-46-13/)
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午7.46.13.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午7.46.13.png)
 
 
 * 完成後我們可以看到會有以下的三個環境變數
 
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午7.47.23.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-13-%e4%b8%8b%e5%8d%887-47-23/)
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午7.47.23.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午7.47.23.png)
 
 ###  step 4-3. deploy 完成後，可以簡單確認是否有成功
 
@@ -176,7 +176,7 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 我們可以藉此確定程式有正常的被 Deploy
 
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-14-上午1.25.48.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-14-%e4%b8%8a%e5%8d%881-25-48/)
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-14-上午1.25.48.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-14-上午1.25.48.png)
 
 
 ## step 5. 設定 webhook
@@ -190,17 +190,17 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 
 
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-13-下午9.29.23.png)](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/attachment/%e6%88%aa%e5%9c%96-2022-12-13-%e4%b8%8b%e5%8d%889-29-23/)
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午9.29.23.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-13-下午9.29.23.png)
 
 
 
 # 完成圖範例
 
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-12-下午11.24.29.png)](https://www.wongwonggoods.com/?attachment_id=8017) 
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-12-下午11.24.29.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-12-下午11.24.29.png) 
 
 
-[![](https://www.wongwonggoods.com/wp-content/uploads/2022/12/截圖-2022-12-12-下午11.21.45.png)](https://www.wongwonggoods.com/?attachment_id=8018)
+[![](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-12-下午11.21.45.png)](https://wongwongnotes.com/images/restored/2022/12/截圖-2022-12-12-下午11.21.45.png)
 
 
 
@@ -246,7 +246,7 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 
 
 # 靈感來源
-* 本文同步更新至我的個人網站：[【Side Project】(全圖文教學) 用 Python flask 實作類似 ChatGPT 的 Linebot，並部屬至 vercel 上](https://www.wongwonggoods.com/portfolio/personal_project/gpt-linebot-python-flask-for-vercel/)
+* 本文同步更新至我的個人網站：[【Side Project】(全圖文教學) 用 Python flask 實作類似 ChatGPT 的 Linebot，並部屬至 vercel 上](https://wongwongnotes.com/posts/life-and-work/portfolio/works/gpt-linebot-python-flask-for-vercel/)
 * 感謝 [memochou1993/gpt-ai-assistant](https://github.com/memochou1993/gpt-ai-assistant?fbclid=IwAR25uqLdKoDKEQd591fSjyM2sDJJR3Xb-VgcXDIFV_7i3RMWWv2oiyG26RQ) 提供的 node.js 版本串接 vercel 示範，讓我有了想把 python linebot 也串進 vercel 的靈感，(目前感覺下來，免費又好用(?))
 * 感謝 [Lanznx/HealthLineBot](https://github.com/Lanznx/HealthLineBot) 給了一個很好的 python Django 範例，然而我不會 Django XD，vercel 官方文件好像也沒有提到這部份，總之後來就改成了 flask 版本，也符合 linebot 推薦的範例。
 
@@ -256,5 +256,3 @@ Import Git Repository，選擇你剛剛 fork 的專案 import
 
 * Line 官方提供的 python flask 製作 linebot 的 sample code [line/line-bot-sdk-python](https://github.com/line/line-bot-sdk-python)
 * Vercel 官方提供的 python runtime Flask 範例 [Deploy an example with Flask](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python#python-version)
-
-
